@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head><title>Tragamonedas</title>
+
+<script language="javascript" type="text/javascript">
+
+var cont=0;
+
+function fpalanca(){
+
+//cada vez que presiona la palanca se baja
+document.getElementById("c4").src="palancaDown.JPG";
+
+var a1=Math.floor(Math.random()*4);
+var a2=Math.floor(Math.random()*4);
+var a3=Math.floor(Math.random()*4);
+
+if(a1==0){
+
+	document.getElementById("c1").src="limon.PNG";
+
+}
+
+if(a1==1){
+
+	document.getElementById("c1").src="ciruela.PNG";
+
+}
+
+if(a1==2){
+
+	document.getElementById("c1").src="banano.PNG";
+
+}
+
+if(a1==3){
+
+	document.getElementById("c1").src="siete.PNG";
+
+}
+
+//----------------------------------------------------------------------
+
+if(a2==0){
+
+	document.getElementById("c2").src="limon.PNG";
+
+
+}
+
+if(a2==1){
+
+	document.getElementById("c2").src="ciruela.PNG";
+	
+}
+
+if(a2==2){
+
+	document.getElementById("c2").src="banano.PNG";
+
+}
+
+if(a2==3){
+
+	document.getElementById("c2").src="siete.PNG";
+
+}
+
+//----------------------------------------------------------------------
+
+if(a3==0){
+
+	document.getElementById("c3").src="limon.PNG";
+
+
+}
+
+if(a3==1){
+
+	document.getElementById("c3").src="ciruela.PNG";
+	
+}
+
+if(a3==2){
+
+	document.getElementById("c3").src="banano.PNG";
+
+}
+
+if(a3==3){
+
+	document.getElementById("c3").src="siete.PNG";
+
+}
+
+//Si son iguales gana
+if(a1==a2 && a1==a3){
+
+	cont=cont+1;
+	alert("Ganaste! "+cont);
+
+}
+
+
+}//termina fpalanca
+
+//--------------------------------------------------------------------------
+
+function uppalanca(){
+
+ //sube la palanca
+ document.getElementById('c4').src="palanca.JPG";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<center>
+
+<img src="up.JPG" />
+
+<table border="1">
+
+	<tr>
+	    <td>
+		<img src="ciruela.PNG" id="c1" /><!--Imagenes por defecto-->
+	    </td>
+
+	    <td>
+		<img src="limon.PNG" id="c2" /><!--Imagenes por defecto-->
+	    </td>
+
+	    <td>
+		<img src="banano.PNG" id="c3" /><!--Imagenes por defecto-->
+	    </td>
+
+	    <td>
+		<img src="palanca.JPG" height="100" id="c4" onclick="fpalanca()" onmouseout="uppalanca()" />
+	    </td>
+
+	</tr>
+
+</table>
+
+<img src="down.JPG" />
+
+</center>
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local y Session Storage</title>
+        <script src="jquery-1.7.1.min.js"></script>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <input type="button" id='contador' value='Incrementar'>
+        <label id='sesion'>Valor de la variable de sesión: </label>
+        <label id='local'>Valor de la variable local: </label>
+        <script type="text/javascript">   
+
+            $(document).ready(function(e){
+                dibujaValores();
+            });
+
+            $('#contador').click(function(e){
+                e.preventDefault();
+
+                //Si el item 'contador' tiene valor 'undefined', le damos valor 1, si no, incrementamos el que tengamos.
+                if(localStorage.getItem('contador')){
+                    var incLocal = Number(localStorage.getItem('contador')) + 1;
+                    localStorage.setItem('contador', incLocal);
+                }else{
+                    localStorage.setItem('contador', 1);
+                }
+
+                //La diferencia entre sessionStorage y localStorage es que el primero crea una sesion de navegador, y cuando se cierra se pierde, mientras que localStorage se guarda en el disco.
+
+                if(sessionStorage.getItem('contador')){
+                    var incSesion = Number(sessionStorage.getItem('contador')) + 1;
+                    sessionStorage.setItem('contador', incSesion);
+                }else{
+                    sessionStorage.setItem('contador', 1);
+                }
+
+                //El valor almacenado como localStorage no es sin embargo intercambiable entre navegadores, es decir, aunque sean los mismos identificadores de item, se tratan en contenedores separados en cada navegador.
+
+                dibujaValores();
+            });
+
+            function dibujaValores(){
+                $('#sesion').html('Valor de la variable de sesión: ' + sessionStorage.contador);
+                $('#local').html('Valor de la variable local: ' + localStorage.contador);
+            }
+
+            function limpiar() {
+                // Esta función borra todo lo almacenado. 
+                localStorage.clear(); 
+                sessionStorage.clear(); 
+                return 'Borrado con éxito';
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+
+	<body style="background-color:Sienna">
+
+		<h1>Formularios</h1>
+			<form>
+				<h3>Campos de texto</h3> <!-- 1 -->
+					Nombre: <input type="text" name="Nombre"><br>
+					Apellido: <input type="text" name="Apellido"><br>
+					Contrasenia: <input type="password" name="pwd"> <br>
+
+				<h3>Botones de radio</h3> <!-- 2 -->
+					<input type="radio" name="sex" value="male">Masculino<br>
+					<input type="radio" name="sex" value="female">Femenino
+
+				<h3>Casillas de verificacion</h3> <!-- 3 -->
+					<input type="checkbox" name="vehicle" value="Bike">Tengo una bicicleta<br>
+					<input type="checkbox" name="vehicle" value="Car">Tengo un carro 
+			</form>
+
+			<form name="input" action="demo_form_action.asp" method="get"> <!-- 4 -->
+				Username: <input type="text" name="user">
+				<input type="submit" value="enviar">
+			</form>
+
+			<form action=""> <!-- 5 -->
+				<h3>Lista desplegable</h3>
+				<select name="cars">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+				<option value="fiat">Fiat</option>
+				<option value="audi">Audi</option>
+				</select>
+			</form>
+
+			<form action=""> <!-- 6: Borde alrededor de un formulario -->
+				<fieldset>
+					<legend>Informacion personal:</legend>
+					Nombre: <input type="text" size="30"><br>	
+					E-mail: <input type="text" size="30"><br>
+					Fecha de nacimiento: <input type="text" size="10">
+				</fieldset>
+			</form>
+			<a href="http://www.w3schools.com/html/html_forms.asp">Visita W3Schools para mas informacion</a>
+	</body>
+
+</html>

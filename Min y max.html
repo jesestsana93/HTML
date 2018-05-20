@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<body>
+		<form action="demo_form.asp">
+  			Introduzca una fecha antes de 1980-01-01:
+  			<input type="date" name="bday" max="1979-12-31"><br>
+
+  			Introduzca una fecha posterior a 01/01/2000:
+  			<input type="date" name="bday" min="2000-01-02"><br>
+
+  			Cantidad (entre 1 y 5):
+ 			<input type="number" name="quantity" min="1" max="5"><br>
+  			<input type="submit">
+  		</form>
+		<p><strong>Nota:</strong> Los atributos de maximo y minimo de la etiqueta de entrada no se admite en Internet Explorer 9 y versiones anteriores, o en Firefox.</p>
+		<p><strong>Nota:</strong> Los atributos de maximo y minimo no funcionaran para fechas y horas en Internet Explorer 10, ya que IE 10 no admite estos tipos de entrada.</p>
+
+	</body>
+
+</html>

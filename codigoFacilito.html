@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<style type="text/css">
+		header{
+			background-color:#333;
+			color:#FFF;
+		}
+	</style>
+</head>
+
+<body>
+	<header>Aquí esta el encabezado de la página en HTML5</header>
+	<nav>
+		<ul>
+			<li>Inicio</li>
+			<li>Contacto</li>
+		</ul>
+	</nav>
+	
+
+	<section>
+		<article> Estas en el articulo principal que habla sobre bla bla bla</article>
+		<aside>Aqui va la información extra, no tan importante</aside>
+	</section>
+	
+	<hgroup>
+		<h1>Bienvenido a codigo facilito</h1>
+		<h2>Enseñanza de programación</h2>
+	</hgroup>
+	<hgroup>
+		<h1>Curso HTML5</h1>
+		<h2>Tag Hgroup</h2>
+	</hgroup>
+
+	<input list="canalesYtube">
+	<datalist id="canalesYtube">
+		<option value="codigoFacilito"/>
+		<option value="flashFacilito"/>
+		<option value="psFacilito"/>
+	</datalist>
+
+	<details open="">
+		<summary>Codigo facilito</summary>
+		Canal dedicado a la enseñanza de la programación
+	</details>
+
+	<details>
+		Detalles, sin cambiar el nombre. Etiqueta compatible con chrome
+	</details>
+
+	<p>Aqui <figure>
+		<img src="Imagenes/chivas.jpg" alt="">
+		<figcaption>Figura 1:Logotipo de chivas</figcaption>
+	</figure>va el contenido principal de la pagina </p>
+	<p>Sin
+		<img src="Imagenes/chivas.jpg" alt="">
+	la etiqueta figure y figcaption se tendria que usar css para que queda como el anterior</p>
+
+	<p>Bienvenido a codigo facilito,canal de <mark>programacion</mark></p>
+	<p>Bienvenido a codigo facilito,canal de <mark style="background-color: red;">programacion</mark></p>
+
+	<meter value="5" max="10" min="0">Tu navegador no reconoce este control</meter>
+	<p>Temperatura:</p>
+	<meter value="22" max="100" min="-20" high="35" low="10" optimum="20">Tu navegador no reconoce este control</meter>
+
+	<progress value="50" max="100">Tu navegador no soporta este control</progress>
+
+	<p>La hora es: <time>08:00</time></p>
+
+	<p draggable="true">Parrafo ejemplo arrastrar</p>
+	<p contenteditable="true" spellcheck="true">Parrafo ejemplo, contenido editable</p>
+	<p hidden>Este parrafo no se vera</p>
+
+</body>
+
+</html>

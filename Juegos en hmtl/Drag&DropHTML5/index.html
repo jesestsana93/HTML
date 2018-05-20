@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<style type="text/css">
+
+div{
+
+ border:1px solid #aaaaaa;
+ float:left; 
+ height:168px; 
+ margin:10px;
+ width:163px;
+
+}
+
+</style>
+
+<script>
+
+function dejarSoltar(ev){
+ ev.preventDefault();
+}
+
+function arrastrar(ev){
+ ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function soltar(ev){
+ ev.preventDefault();
+ var data=ev.dataTransfer.getData("Text");
+ ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div ondrop="soltar(event)" ondragover="dejarSoltar(event)"></div>
+
+<div ondrop="soltar(event)" ondragover="dejarSoltar(event)">
+ <img src="cara.jpg" draggable="true" ondragstart="arrastrar(event)" id="carafeliz">
+</div>
+
+<div ondrop="soltar(event)" ondragover="dejarSoltar(event)"></div>
+
+</body>
+</html>
+

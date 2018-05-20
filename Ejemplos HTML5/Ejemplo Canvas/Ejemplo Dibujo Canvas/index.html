@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Jugando con Canvas</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+    
+    <body>
+        <div>
+            <canvas id='lienzo' width='640' height='480'></canvas>
+        </div>
+        <input name="guardar" type="button" value="Guardar" onclick="upload();">
+        <br><img style="width:640px; height:480px" id="imagen" src="image.png" />
+        
+    </body>
+    
+    <script src='js/jquery.min.js'></script>
+    <script src='js/hammer.js'></script>
+    <script>
+        var element;
+        var canvas;
+        var ctx;
+        var color = '#ff0000';
+        var draw = true;
+        var arrastrados = new Array();
+        var penWidth = 5;
+
+        //Este será nuestro canvas que hará de contenedor.
+        canvas = document.getElementById('lienzo');
+
+        //Este será nuestro contexto. El contexto es donde realmente dibujamos.
+        ctx = canvas.getContext("2d");
+
+        //Definimos el estilo de nuestra línea.
+        ctx.strokeStyle = color;
+
+        //El tipo de esquinas que crea, pudiendo ser 'round', 'mitter' o 'bevel'
+        ctx.lineJoin = 'round';
+
+        //Define el ancho de la línea
+        ctx.lineWidth = penWidth;
+        var prevX = null;
+        var prevY = null;
+
+        //Este es un plugin para compatibilizar los eventos touch
+        var hammer = new Hammer(canvas, {
+            drag_min_distance: 1,
+            drag_horizontal: true,
+            drag_vertical: true,
+            transform: false,
+            hold: false,
+            prevent_default: true
+        });
+        
+        hammer.ondrag = function(e){
+            if(draw){
+                var x = e.position.x - canvas.offsetLeft;
+                var y = e.position.y - canvas.offsetTop;
+                brush(x, y, true);
+            }
+        };
+
+        brush = function(x, y, dragging){
+            if(prevX == null){
+                prevX = x;
+                prevY = y;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.closePath();
+                ctx.stroke();
+            }else{
+                ctx.beginPath();
+                ctx.moveTo(prevX, prevY);
+                ctx.lineTo(x, y);
+                ctx.closePath();
+                ctx.stroke();
+                prevX = x;
+                prevY = y;
+            }
+        }
+
+        upload = function(){
+            $.post('upload-image.php',{img : canvas.toDataURL()});
+        }
+
+    </script>
+</html>

@@ -1,0 +1,176 @@
+@font-face{
+    font-family: "Museo"; 
+    src: url("../media/Museo700-Regular.otf");
+}
+
+#principal{
+    width:960px;
+    margin: 0 auto;
+}
+
+header{
+    height:115px;
+    padding: 10px 0px;
+    background: url("../images/resplandor.png") top left no-repeat;
+}
+
+
+nav{
+    overflow: hidden;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #0270BB;
+}
+    
+    nav form{
+        float: right;
+        margin-top: 5px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    
+    nav ul{
+        list-style: none;
+    }
+    
+        nav ul li{
+            float:left;
+            padding: 10px 10px;
+        }
+        
+            nav ul li a{
+                padding: 5px 10px !important;
+                color: #FFFFFF !important;
+                text-shadow: 1px 1px 1px rgba(255,255,255, 0.4),
+                            -1px -1px -1px rgba(0,0,0,0.4);
+                -o-text-shadow: 1px 1px 1px rgba(255,255,255, 0.4),
+                            -1px -1px -1px rgba(0,0,0,0.4);
+                -ms-text-shadow: 1px 1px 1px rgba(255,255,255, 0.4),
+                            -1px -1px -1px rgba(0,0,0,0.4);
+                -moz-text-shadow: 1px 1px 1px rgba(255,255,255, 0.4),
+                            -1px -1px -1px rgba(0,0,0,0.4);
+                -webkit-text-shadow: 1px 1px 1px rgba(255,255,255, 0.4),
+                            -1px -1px -1px rgba(0,0,0,0.4);
+            }
+                
+                nav ul li a:hover{
+                    border-radius: 3px;
+                    -o-border-radius: 3px;
+                    -ms-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    -webkit-border-radius: 3px;
+                    
+                    box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+                    background-color:#0065A9; 
+                }
+    
+aside{
+    clear: both;
+    width: 950px;
+    margin: 10px 0px;
+    height: 340px;
+    overflow: hidden;
+    background: #ECECEC;
+    border: 5px solid #D8D8D8;
+}
+    @-webkit-keyframes animaSlide{
+        from{ 
+            left:0px; 
+        }
+        20%{
+            left:0px;
+        }
+        40%{
+            left:0px;
+        }
+        60%{
+            left:-960px;
+        }
+        80%{
+            left:-960px;
+        }
+        to{
+            left:-960px;
+        }
+    }
+    
+    #slides{
+        width:1920px;
+        height:auto;
+        overflow: hidden;
+        -webkit-animation-name: animaSlide;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-timing-function: ease-in-out; 
+        position:relative;
+    }
+        #slides img{
+            float:left;
+        }
+
+article{
+    
+}
+    .bloques{
+        float:left;
+        position: relative;
+        width: 300px;
+        margin: 0 10px 10px 0;
+        text-align: center;
+        padding-top: 30px;
+        background: url("../images/separador.jpg") top center no-repeat;
+    }
+    
+    .bloques p, .bloques h2{
+        text-align: left;
+    }
+
+section{
+    
+}
+
+    .elementoPie{
+        float:left;
+        position: relative;
+        width: 300px;
+        margin: 0 10px 0 0;
+        text-align: center;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+    }
+    
+    #busquedasRecientes, #busquedasRecientes h2{
+        width: 290px;
+        padding-left: 5px;
+        padding-top: 10px;
+        color: #fff !important;
+        margin: 0px 5px;
+    }
+        #busquedasRecientes h3{
+            color:#C3C3C3 !important;
+            padding-left: 10px;
+            padding-bottom: 10px;
+
+        }
+footer{
+    clear: both;
+    height: 220px;
+    padding-top: 10px;
+}
+
+video{
+    width: 300px;
+}
+
+h2{
+    font-family: 'Museo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

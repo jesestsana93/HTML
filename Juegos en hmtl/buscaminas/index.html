@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head><title>Buscaminas</title>
+
+<style type="text/css">
+ body{
+
+  font-family:Arial,Helvetica,sans-serif;
+  color:white;
+  background-color:black;
+
+ }
+
+ td:hover{
+  background-color:green;  
+ }
+</style>
+
+
+<script type="text/javascript">
+
+ var nivel=1;
+
+ function pisar(num){
+
+  if(nivel==1){
+   var mina1=Math.floor(Math.random()*15);
+
+   if(mina1==num){
+
+    document.getElementById('c'+num).src="mina.PNG";
+    document.getElementById('msg').innerHTML='Haz encontrado una mina';
+    nivel=-1;
+   
+
+   }else{
+    
+    nivel=2;
+    document.getElementById('niveles').innerHTML=nivel;
+    
+    num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+   
+   }
+
+  }
+
+   //---------------------------------------
+
+  if(nivel==2){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*8);//0 - 7 (fila 1 y 2)   
+    var mina2=Math.floor(Math.random()*(15-(8-1)))+8;//8 - 15 (fila 3 y 4) 
+
+    //alert(mina1+" "+mina2);
+
+    if(num==mina1 || num==mina2){
+
+     document.getElementById('c'+mina1).src="mina.PNG";
+     document.getElementById('c'+mina2).src="mina.PNG";
+      
+     document.getElementById('msg').innerHTML='Haz encontrado una mina';
+
+
+     nivel=-1;
+     
+
+    }else{
+     nivel=3;
+     document.getElementById('niveles').innerHTML=nivel;
+     
+     num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+
+    }
+
+   }
+
+  }//nivel2
+  
+
+  //---------------------------------------
+
+  if(nivel==3){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*4);//0-3 (fila 1)   
+    var mina2=Math.floor(Math.random()*(11-(4-1)))+4;//4 - 11 (fila 2 y 3) 
+    var mina3=Math.floor(Math.random()*(15-(12-1)))+12;//12 - 15 (fila 4) 
+
+    //alert(mina1+" "+mina2+" "+mina3);
+
+    if(num==mina1 || num==mina2 || num==mina3){
+
+
+     document.getElementById('c'+mina1).src="mina.PNG";
+     document.getElementById('c'+mina2).src="mina.PNG";
+     document.getElementById('c'+mina3).src="mina.PNG";
+     document.getElementById('msg').innerHTML='Haz encontrado una mina';
+
+     nivel=-1;
+     
+
+    }else{
+     nivel=4;
+     document.getElementById('niveles').innerHTML=nivel;
+     
+     num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+
+    }
+
+
+   }
+
+  }
+
+  //-------------------------------------------
+
+
+  if(nivel==4){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*4);   
+    var mina2=Math.floor(Math.random()*(7-(4-1)))+4;//(fila 2) 
+    var mina3=Math.floor(Math.random()*(11-(8-1)))+8; //(fila 3) 
+    var mina4=Math.floor(Math.random()*(15-(12-1)))+12; //(fila 4) 
+
+    //alert(mina1+" "+mina2+" "+mina3+" "+mina4);
+
+    if(num==mina1 || num==mina2 || num==mina3 || num==mina4){
+
+      document.getElementById('c'+mina1).src="mina.PNG";
+      document.getElementById('c'+mina2).src="mina.PNG";
+      document.getElementById('c'+mina3).src="mina.PNG";
+      document.getElementById('c'+mina4).src="mina.PNG";
+      
+      document.getElementById('msg').innerHTML='Haz encontrado una mina';
+      
+
+      nivel=-1;
+     
+
+    }else{
+     nivel=5;
+     document.getElementById('niveles').innerHTML=nivel;
+     
+     num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+
+    }
+
+   }
+
+  }
+
+  //----------------------------------------------------------
+
+  if(nivel==5){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*2);// (fila 1) dos primeros cuadros  
+    var mina2=Math.floor(Math.random()*(3-(2-1)))+2;// (fila 1) dos ultimos cuadros 
+    var mina3=Math.floor(Math.random()*(7-(4-1)))+4;//(fila 2)
+    var mina4=Math.floor(Math.random()*(11-(8-1)))+8;//(fila 3)
+    var mina5=Math.floor(Math.random()*(15-(12-1)))+12;//(fila 4)
+
+    //alert(mina1+" "+mina2+" "+mina3+" "+mina4+" "+mina5);
+
+    if(num==mina1 || num==mina2 || num==mina3 || num==mina4 || num==mina5){
+
+
+     document.getElementById('c'+mina1).src="mina.PNG";
+     document.getElementById('c'+mina2).src="mina.PNG";
+     document.getElementById('c'+mina3).src="mina.PNG";
+     document.getElementById('c'+mina4).src="mina.PNG";
+     document.getElementById('c'+mina5).src="mina.PNG";
+
+     document.getElementById('msg').innerHTML='Haz encontrado una mina';
+     nivel=-1;
+     
+
+    }else{
+     nivel=6;
+     document.getElementById('niveles').innerHTML=nivel;
+     
+     num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+
+    }
+
+   }
+
+  }
+
+  //-----------------------------------------------------
+
+  if(nivel==6){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*2);//fila 1   
+    var mina2=Math.floor(Math.random()*(3-(2-1)))+2;//fila 1
+    var mina3=Math.floor(Math.random()*(7-(4-1)))+4;
+    var mina4=Math.floor(Math.random()*(11-(8-1)))+8;
+    var mina5=Math.floor(Math.random()*(13-(12-1)))+12;//fila 4
+    var mina6=Math.floor(Math.random()*(15-(14-1)))+14;//fila 4
+
+    //alert(mina1+" "+mina2+" "+mina3+" "+mina4+" "+mina5+" "+mina6);
+
+    if(num==mina1 || num==mina2 || num==mina3 || num==mina4 || num==mina5 || num==mina6){
+
+
+     document.getElementById('c'+mina1).src="mina.PNG";
+     document.getElementById('c'+mina2).src="mina.PNG";
+     document.getElementById('c'+mina3).src="mina.PNG";
+     document.getElementById('c'+mina4).src="mina.PNG";
+     document.getElementById('c'+mina5).src="mina.PNG";
+     document.getElementById('c'+mina6).src="mina.PNG";
+
+     document.getElementById('msg').innerHTML='Haz encontrado una mina';
+     nivel=-1;
+     
+
+    }else{
+     nivel=7;
+     document.getElementById('niveles').innerHTML=nivel;
+     
+     num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+
+    }
+
+   }
+
+  }
+
+  //-----------------------------------------------------
+
+  if(nivel==7){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*2);   
+    var mina2=Math.floor(Math.random()*(3-(2-1)))+2;
+    var mina3=Math.floor(Math.random()*(5-(4-1)))+4;
+    var mina4=Math.floor(Math.random()*(7-(6-1)))+6;
+    var mina5=Math.floor(Math.random()*(9-(8-1)))+8;
+    var mina6=Math.floor(Math.random()*(11-(10-1)))+10;
+    var mina7=Math.floor(Math.random()*(15-(12-1)))+12;
+
+    //alert(mina1+" "+mina2+" "+mina3+" "+mina4+" "+mina5+" "+mina6+" "+mina7);
+
+    if(num==mina1 || num==mina2 || num==mina3 || num==mina4 || num==mina5 || num==mina6 || num==mina7){
+
+
+     document.getElementById('c'+mina1).src="mina.PNG";
+     document.getElementById('c'+mina2).src="mina.PNG";
+     document.getElementById('c'+mina3).src="mina.PNG";
+     document.getElementById('c'+mina4).src="mina.PNG";
+     document.getElementById('c'+mina5).src="mina.PNG";
+     document.getElementById('c'+mina6).src="mina.PNG";
+     document.getElementById('c'+mina7).src="mina.PNG";
+
+     document.getElementById('msg').innerHTML='Haz encontrado una mina';
+
+     nivel=-1;
+     
+
+    }else{
+     nivel=8;
+     document.getElementById('niveles').innerHTML=nivel;
+     
+     num=-1;//reseteo a num porque sino el programa se sigue ejecutando
+
+    }
+
+   }
+
+  }
+
+  //----------------------------------------------
+
+  if(nivel==8){
+
+   if(num>=0 && num<=15){
+
+    var mina1=Math.floor(Math.random()*2);   
+    var mina2=Math.floor(Math.random()*(3-(2-1)))+2;
+    var mina3=Math.floor(Math.random()*(5-(4-1)))+4;
+    var mina4=Math.floor(Math.random()*(7-(6-1)))+6;
+    var mina5=Math.floor(Math.random()*(9-(8-1)))+8;
+    var mina6=Math.floor(Math.random()*(11-(10-1)))+10;
+    var mina7=Math.floor(Math.random()*(13-(12-1)))+12;
+    var mina8=Math.floor(Math.random()*(15-(14-1)))+14;
+
+    //alert(mina1+" "+mina2+" "+mina3+" "+mina4+" "+mina5+" "+mina6+" "+mina7+" "+mina8);
+
+    if(num==mina1 || num==mina2 || num==mina3 || num==mina4 || num==mina5 || num==mina6 || num==mina7 || num==mina8){
+
+
+     document.getElementById('c'+mina1).src="mina.PNG";
+     document.getElementById('c'+mina2).src="mina.PNG";
+     document.getElementById('c'+mina3).src="mina.PNG";
+     document.getElementById('c'+mina4).src="mina.PNG";
+     document.getElementById('c'+mina5).src="mina.PNG";
+     document.getElementById('c'+mina6).src="mina.PNG";
+     document.getElementById('c'+mina7).src="mina.PNG";
+     document.getElementById('c'+mina8).src="mina.PNG";
+
+     document.getElementById('msg').innerHTML='Haz encontrado una mina';
+
+     nivel=-1;
+
+    }else{
+     
+     document.getElementById('msg').innerHTML='Felicitaciones!';
+     nivel=-1
+
+    }
+
+   }
+
+  }
+
+  //----------------------------------------------
+
+ }//pisar
+ 
+
+</script>
+
+</head>
+
+</body>
+
+<center>
+
+<h1><b>No pises la mina!</b></h1>
+
+<table border="0">
+
+ <tr>
+     <td><img src="fondo.PNG" id="c0" onclick="pisar(0)" /></td>
+     <td><img src="fondo.PNG" id="c1" onclick="pisar(1)" /></td>
+     <td><img src="fondo.PNG" id="c2" onclick="pisar(2)" /></td>
+     <td><img src="fondo.PNG" id="c3" onclick="pisar(3)" /></td>
+ </tr>
+
+ <tr>
+     <td><img src="fondo.PNG" id="c4" onclick="pisar(4)" /></td>
+     <td><img src="fondo.PNG" id="c5" onclick="pisar(5)" /></td>
+     <td><img src="fondo.PNG" id="c6" onclick="pisar(6)" /></td>
+     <td><img src="fondo.PNG" id="c7" onclick="pisar(7)" /></td>
+ </tr>
+
+ <tr>
+     <td><img src="fondo.PNG" id="c8" onclick="pisar(8)" /></td>
+     <td><img src="fondo.PNG" id="c9" onclick="pisar(9)" /></td>
+     <td><img src="fondo.PNG" id="c10" onclick="pisar(10)" /></td>
+     <td><img src="fondo.PNG" id="c11" onclick="pisar(11)" /></td>
+ </tr>
+
+ <tr>
+     <td><img src="fondo.PNG" id="c12" onclick="pisar(12)" /></td>
+     <td><img src="fondo.PNG" id="c13" onclick="pisar(13)" /></td>
+     <td><img src="fondo.PNG" id="c14" onclick="pisar(14)" /></td>
+     <td><img src="fondo.PNG" id="c15" onclick="pisar(15)" /></td>
+ </tr>
+
+</table>
+
+<input type="button" value="Juego Nuevo" onclick="location.reload();" />
+
+<h2>NIVEL</h2> <div id="niveles" style="font-size:60px">1</div>
+
+<div style="font-size:60px" id="msg"></div>
+
+</center>
+
+</body>
+
+</html>

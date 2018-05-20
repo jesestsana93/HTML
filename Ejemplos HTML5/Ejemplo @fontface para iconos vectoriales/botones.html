@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Usando iconos vectoriales</title>
+    <meta charset='utf-8'>
+    <style>
+        @font-face {
+            font-family: 'iconos';
+            src: url('fonts/iconos.eot');
+            src: url('fonts/iconos.eot?#iefix') format('embedded-opentype'),
+                    url('fonts/iconos.svg#iconos') format('svg'),
+                    url('fonts/iconos.woff') format('woff'),
+                    url('fonts/iconos.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    
+        body{
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        .boton{
+            color: #FFF;
+            display: block;
+            margin: 5px;
+            padding: 10px 12px;
+            text-decoration: none;
+            width: 100px;
+        }
+        
+        .descargar{
+            background: #259D12;
+        }
+            .descargar:hover{
+                background: #1F860F;
+            }
+            
+            .descargar:before{
+                content: 'b';
+                font-family: 'iconos';
+                margin-right: 10px;
+            }
+            
+        .subir{
+            background: #EB3917;
+        }
+            
+            .subir:hover{
+                background: #BF2E13;
+            }
+            
+            .subir:before{
+                content: 's';
+                font-family: 'iconos';
+                margin-right: 10px;
+            }
+    </style>
+</head>
+
+<body>
+    <a href='' class='boton subir'>Subir</a>
+    <a href='' class='boton descargar'>Descargar</a>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--totaledit-->
+<html>
+    <head>
+        <title>Seminario HTML5</title>
+        <link rel="stylesheet" type="text/css" href="css/etiquetas.css">
+        <link rel="stylesheet" type="text/css" href="css/estructura.css">
+        <meta charset="UTF8">
+    </head>
+    
+    <body>
+        <div id="principal">
+            <header>
+                <a href="#" title="Inicio"><img src="images/logo.png" alt="Logotipo"></a>
+            </header>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" title="Inicio">Inicio</a></li>
+                    <li><a href="#" title="Sección">Sección</a></li>
+                    <li><a href="#" title="Sección">Sección</a></li>
+                    <li><a href="#" title="Sección">Sección</a></li>
+                    <li><a href="#" title="Sección">Sección</a></li>
+                    <li><a href="#" title="Sección">Sección</a></li>   
+                </ul>
+                <form>
+                    <input id="buscador" name="txtBuscar" type="search" placeholder="Buscar aquí..." autofocus ></input>
+                    <input type="submit" class="boton peque aceptar" value="buscar" onclick="registraBusqueda()"></input>
+                </form>
+                
+            </nav>
+            
+            <aside>
+                <div id="slides">
+                    <img src="images/slide1.jpg" title="Slide1">
+                    <img src="images/slide2.jpg" title="Slide2">
+                </div>
+            </aside>
+            <section>
+                <article class="bloques">
+                    <header>
+                        <hgroup>
+                          <h1>Una sección</h1>  
+                        </hgroup>
+                        
+                    </header>
+                        
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" title="Ver más" class="boton">Ver más</a>
+                </article>
+                
+                <article class="bloques">
+                        <h2>Otra sección</h2>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" title="Ver más" class="boton">Ver más</a>
+                </article>
+                
+                <article class="bloques">
+                        <h2>Un vídeo</h2>
+                        <video controls src="media/video.ogv" type="video/ogv" poster=""></video>
+                </article>
+            </section>
+            <footer>
+                <article>
+                    <section class="elementoPie">
+                        
+                    </section>
+                    <section class="elementoPie" id="busquedasRecientes">
+                        <h2>Última búsqueda</h2>
+                    </section>
+                    <section class="elementoPie">
+                        <canvas id="lienzo" width="300px" height="210px">
+                        </canvas>
+                    </section>
+                </article> 
+            </footer>
+        </div>
+        
+        <script type="text/javascript">        
+            function cargaContextoCanvas(idCanvas){
+               var elemento = document.getElementById(idCanvas);
+               if(elemento && elemento.getContext){
+                  var contexto = elemento.getContext('2d');
+                  if(contexto){
+                    return contexto;
+                  }
+               }
+               return FALSE;
+            }
+            
+            
+            function registraBusqueda(){
+                var busqueda = "<h3 color='#fff'>" + document.getElementById('buscador').value + "</h3>";
+                localStorage.setItem("ultimaBusqueda", busqueda);
+            }
+                
+                function mostrarBusqueda (){
+                    if(localStorage.getItem("ultimaBusqueda") != undefined){
+                        var contenedor = document.getElementById('busquedasRecientes');
+                        contenedor.innerHTML +=  localStorage.getItem("ultimaBusqueda");
+                    }  
+                }
+                
+            window.onload = function(){
+                    var ctx = cargaContextoCanvas('lienzo');
+                    if(ctx){
+                        var img = new Image();
+                        img.src = 'images/HTML5logo.svg';
+                        img.onload = function(){
+                        ctx.drawImage(img, 40, 10);
+                        }
+                    }
+                mostrarBusqueda();
+                }
+        </script>
+    </body>
+</html>

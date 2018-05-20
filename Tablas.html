@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Tablas en HTML</title> 
+		<style>
+			thead {color:brown;}
+			tbody {color:blue;}
+			tfoot {color:orange;}
+
+		</style>
+	</head>
+
+	<body>
+		<table border="1" style="width:300px"> <!-- Borde de la tabla -->
+			<!--Ajuste del color de fondo de las tres columnas con las etiquetas <colgroup> y <col> y posicion -->
+			<colgroup>
+    			<col span="2" align="left" style="background-color:red">
+    			<col style="background-color:yellow" align="right">
+   			</colgroup>
+
+ 			<thead>
+				<tr>		
+  					<th>Firstname</th> <!-- Los encabezados de las tablas se definen con la etiqueta <th>.-->
+  					<th>Lastname</th>		
+  					<th>Points</th>
+  				</tr>
+ 			</thead>
+
+ 		    <tfoot>
+				<tr> <!-- Una tabla se divide en las filas con la etiqueta <tr> -->
+  					<td>Jill</td> <!-- Una fila se divide en celdas de datos con la etiqueta <td> -->
+  					<td>Smith</td>		
+  					<td>50</td>
+  				</tr>
+
+  				<tr>
+  					<td>Eve</td>
+  					<td>Jackson</td>		
+  					<td>94</td>
+				</tr>
+			</tfoot>
+
+			<tbody>
+				<tr>
+  					<td>John</td>
+  					<td>Doe</td>		
+  					<td>80</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="http://www.w3schools.com/html/html_tables.asp">Visita W3Schools para mas informacion</a>
+
+	</body>
+
+</html>
